@@ -20,6 +20,6 @@ jobs:
         cd AgileworksAPI
         dotnet add package Microsoft.EntityFrameworkCore.InMemory           
     - name: Build
-      run: cd dotnet build --no-restore
+      run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
