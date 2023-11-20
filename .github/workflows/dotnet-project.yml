@@ -18,7 +18,7 @@ jobs:
     - name: Add Test project reference to main project
       run : |
         cd AgileworksAPI.Tests
-        dotnet add AgileWorksAPI.Tests.csproj reference AgileWorksAPI/AgileWorksAPI.csproj    
+        dotnet add AgileWorksAPI.Tests.csproj reference ../AgileWorksAPI/AgileWorksAPI.csproj    
     - name: Install dependencies for Project
       run: |
         cd AgileworksAPI
