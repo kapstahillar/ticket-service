@@ -18,7 +18,8 @@ jobs:
     - name: Install dependencies for Project
       run: |
         cd AgileworksAPI
-        dotnet add package Microsoft.EntityFrameworkCore.InMemory           
+        dotnet add package Microsoft.EntityFrameworkCore.InMemory    
+        dotnet add ./AgileWorksAPI.Tests/AgileWorksAPI.Tests.csproj reference ./AgileWorksAPI/AgileWorksAPI.csproj       
     - name: Build
       run: dotnet build --no-restore
     - name: Test
