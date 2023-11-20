@@ -19,10 +19,11 @@ jobs:
       run: |
         cd AgileworksAPI
         dotnet add package Microsoft.EntityFrameworkCore.InMemory                   
-    # - name: Build
-    #   run: |
-    #     cd AgileworksAPI
-    #     dotnet build --no-restore
+    - name: Build
+      run: |
+        cd AgileworksAPI      
+        dotnet build --no-restore
+        dotnet new classlib -o AgileworksAPI
     - name: Add Test project reference to main project
       run : |
         cd AgileWorksAPI.Tests
