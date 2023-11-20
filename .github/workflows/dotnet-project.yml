@@ -18,8 +18,8 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.0.x   
-    - name: Add Test project reference to main project
-      run : dotnet add AgileWorksAPI.Tests/AgileWorksAPI.Tests.csproj reference AgileWorksAPI/AgileWorksAPI.csproj    
+    # - name: Add Test project reference to main project
+    #   run : dotnet add AgileWorksAPI.Tests/AgileWorksAPI.Tests.csproj reference AgileWorksAPI/AgileWorksAPI.csproj    
     - name: Install dependencies for Project
       run: |
         cd AgileworksAPI
