@@ -30,4 +30,4 @@ jobs:
     - name: Test
       run: |
         cd "AgileWorksAPI.Tests"
-        dotnet test --no-build --verbosity normal
+        dotnet test --verbosity normal
