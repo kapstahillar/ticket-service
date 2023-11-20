@@ -15,10 +15,10 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.0.x       
-    - name: Use project dir
-      run: cd AgileworksAPI
     - name: Install dependencies for Project
-      run: dotnet add package Microsoft.EntityFrameworkCore.InMemory           
+      run: |
+        cd AgileworksAPI
+        dotnet add package Microsoft.EntityFrameworkCore.InMemory           
     - name: Build
       run: cd dotnet build --no-restore
     - name: Test
