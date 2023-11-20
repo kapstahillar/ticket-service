@@ -6,9 +6,9 @@ name: .NET
 on:
   pull_request:
     branches: [ "main", "develop" ]
-    # paths:
-    #   - AgileWorksAPI/**
-    #   - .github/workflows/dotnet-project.yml
+    paths:
+      - AgileWorksAPI/**
+      - .github/workflows/dotnet-project.yml
 jobs:
   build:
     runs-on: ubuntu-latest
