@@ -6,6 +6,8 @@ name: .NET
 on:
   pull_request:
     branches: [ "main", "develop" ]
+    paths:
+      - AgileWorksAPI/**
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,12 +16,14 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 8.0.x       
-    - name: Use project dir
-      run: cd AgileworksAPI
+        dotnet-version: 8.0.x   
+    - name: Add Test project reference to main project
+      run : dotnet add AgileWorksAPI.Tests/AgileWorksAPI.Tests.csproj reference AgileWorksAPI/AgileWorksAPI.csproj    
     - name: Install dependencies for Project
-      run: dotnet add package Microsoft.EntityFrameworkCore.InMemory           
+      run: |
+        cd AgileworksAPI
+        dotnet add package Microsoft.EntityFrameworkCore.InMemory                   
     - name: Build
-      run: cd dotnet build --no-restore
+      run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
