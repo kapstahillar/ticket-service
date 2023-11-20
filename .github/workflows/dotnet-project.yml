@@ -14,12 +14,13 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 8.0.x       
+        dotnet-version: 8.0.x   
+    - name: Add Test project reference to main project
+      run : dotnet add ./AgileWorksAPI.Tests/AgileWorksAPI.Tests.csproj reference ./AgileWorksAPI/AgileWorksAPI.csproj    
     - name: Install dependencies for Project
       run: |
         cd AgileworksAPI
-        dotnet add package Microsoft.EntityFrameworkCore.InMemory    
-        dotnet add ./AgileWorksAPI.Tests/AgileWorksAPI.Tests.csproj reference ./AgileWorksAPI/AgileWorksAPI.csproj       
+        dotnet add package Microsoft.EntityFrameworkCore.InMemory                   
     - name: Build
       run: dotnet build --no-restore
     - name: Test
