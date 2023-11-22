@@ -7,11 +7,8 @@ on:
   pull_request:
   push:
     branches: [ "main", "develop" ]
-    paths: 
-      - AgileworksAPI/**
-      - AgileworksAPI.Tests/**
-    paths-ignore:
-      - front-end/** 
+    paths-ignore: 
+      - frontend-app/**
 jobs:
   build:
     runs-on: ubuntu-latest
