@@ -14,5 +14,5 @@ class TicketService {
         return httpclient.put<ITicketAPI>("/ticket", data);
     }
 }
-
+// eslint-disable-next-line
 export default new TicketService();

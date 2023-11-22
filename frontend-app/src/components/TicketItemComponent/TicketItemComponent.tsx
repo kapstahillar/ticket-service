@@ -22,25 +22,20 @@ function TicketItemComponent({
     const [isNearDeadline, setIsNearDeadline] = useState<boolean>(false);
 
     useEffect(() => {
-        createdAt = moment.utc(createdAt).local().format("YYYY-MM-DDTHH:mm:ss")
-        deadLineAt = moment.utc(deadLineAt).local().format("YYYY-MM-DDTHH:mm:ss")
-    }, [])
-
-    useEffect(() => {
-        checkIfUnderHourRemainingOnDeadline()
-    }, [deadLineAt])
-
-    function checkIfUnderHourRemainingOnDeadline() {
-        if (/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/.test(deadLineAt)) {
-            const d1 = new Date(deadLineAt)
-            const currDate = moment()
-            let date = moment(d1)
-            date = date.subtract(1, 'h')
-            if (currDate > date) {
-                setIsNearDeadline(true);
+        const checkIfUnderHourRemainingOnDeadline = () => {
+            if (/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/.test(deadLineAt)) {
+                const d1 = new Date(deadLineAt)
+                const currDate = moment()
+                let date = moment(d1)
+                date = date.subtract(1, 'h')
+                if (currDate > date) {
+                    setIsNearDeadline(true);
+                }
             }
         }
-    }
+
+        checkIfUnderHourRemainingOnDeadline()
+    }, [deadLineAt])
 
     return (
         <div className={`ticket-list-item ${isNearDeadline ? 'near-deadline' : ''}`}>

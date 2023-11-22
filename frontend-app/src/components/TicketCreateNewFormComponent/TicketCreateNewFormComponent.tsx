@@ -38,7 +38,7 @@ class TicketCreateNewFormComponent extends Component<ITicketCreateNewFormCompone
         if (!this.isIsoDate(this.state.deadLineAt)) {
             errors.push("Deadline date is in wrong format: use YYYY-MM-DDTHH:MM:SS")
         }
-        if (this.state.description == "") {
+        if (this.state.description === "") {
             errors.push("Your description is empty")
         }
         if (errors.length > 0) {

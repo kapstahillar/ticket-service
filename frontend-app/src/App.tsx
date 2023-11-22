@@ -34,9 +34,7 @@ class App extends Component<{}, AppState> {
 
   handleSolve(id: number) {
     TicketService.solve({ ticketId: id }).then(result => {
-      let ticket = result.data
-      this.state.items = this.state.items.filter(x => x.id != id)
-      this.setState({ ...this.state, items: this.state.items })
+      this.setState({ ...this.state, items: this.state.items.filter(x => x.id !== id) })
     })
   }
 
