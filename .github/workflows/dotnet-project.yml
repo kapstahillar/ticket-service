@@ -6,6 +6,9 @@ name: .NET
 on:
   pull_request:
     branches: [ "main", "develop" ]
+    paths: 
+      - AgileworksAPI/**
+      - AgileworksAPI.Tests/**
 jobs:
   build:
     runs-on: ubuntu-latest
