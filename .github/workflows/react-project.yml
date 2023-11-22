@@ -11,6 +11,7 @@ on:
       - 'frontend-app/**'
       - '!AgileworksAPI/**'
       - '!AgileworksAPI.Tests/**'
+      - '!.github/workflows/dotnet-project.yml'
 jobs:
   build_test:
     runs-on: ubuntu-latest
