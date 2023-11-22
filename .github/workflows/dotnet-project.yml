@@ -8,7 +8,7 @@ on:
     branches: [ "main", "develop" ]
     paths: 
       - AgileworksAPI/**
-      - AgileworksAPI.Tests/**
+      - AgileWorksAPI.Tests/**
 jobs:
   build:
     runs-on: ubuntu-latest
