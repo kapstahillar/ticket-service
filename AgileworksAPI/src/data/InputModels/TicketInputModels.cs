@@ -16,7 +16,4 @@ public class SolveTicketInputModel
 {
     [Required]
     public long TicketId { get; set; }
-
-    [Required]
-    public DateTime SolvedAt { get; set; }
 }

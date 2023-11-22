@@ -5,7 +5,7 @@ using AgileworksAPI.Models.Data;
 using AgileworksAPI.Models.Input;
 using Moq;
 
-namespace AgileWorksAPI.Tests;
+namespace AgileworksAPI.Tests;
 
 public class TicketServiceTests
 {

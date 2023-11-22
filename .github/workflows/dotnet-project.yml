@@ -5,12 +5,15 @@ name: .NET
 
 on:
   pull_request:
+  push:
     branches: [ "main", "develop" ]
-    paths:
-      - AgileWorksAPI/**
-      - .github/workflows/dotnet-project.yml
+    paths: 
+      - '!frontend-app/**'
+      - 'AgileworksAPI/**'
+      - 'AgileworksAPI.Tests/**'
+      - '!.github/workflows/react-project.yml'
 jobs:
-  build:
+  build_and_test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -18,13 +21,20 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.0.x   
-    - name: Add Test project reference to main project
-      run : dotnet add AgileWorksAPI.Tests/AgileWorksAPI.Tests.csproj reference AgileWorksAPI/AgileWorksAPI.csproj    
     - name: Install dependencies for Project
       run: |
         cd AgileworksAPI
-        dotnet add package Microsoft.EntityFrameworkCore.InMemory                   
+        dotnet add package Microsoft.EntityFrameworkCore.InMemory   
+    - name: Restore dependencies
+      run: |
+        cd AgileworksAPI      
+        dotnet nuget locals all --clear
+        dotnet restore
     - name: Build
-      run: dotnet build --no-restore
+      run: |
+        cd AgileworksAPI      
+        dotnet build
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: |
+        cd "AgileworksAPI.Tests"
+        dotnet test --verbosity normal

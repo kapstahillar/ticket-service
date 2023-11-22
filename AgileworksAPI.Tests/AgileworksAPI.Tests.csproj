@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AgileWorksAPI\AgileWorksAPI.csproj" />
+    <ProjectReference Include="..\AgileworksAPI\AgileworksAPI.csproj" />
   </ItemGroup>
 
 </Project>
