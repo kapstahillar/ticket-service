@@ -30,8 +30,7 @@ jobs:
     - name: Build
       run: |
         cd AgileworksAPI      
-        dotnet build --no-restore
-        dotnet new classlib -o AgileworksAPI    
+        dotnet build
     - name: Test
       run: |
         cd "AgileworksAPI.Tests"
