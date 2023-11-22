@@ -22,7 +22,11 @@ jobs:
     - name: Install dependencies for Project
       run: |
         cd AgileworksAPI
-        dotnet add package Microsoft.EntityFrameworkCore.InMemory                   
+        dotnet add package Microsoft.EntityFrameworkCore.InMemory   
+    - name: Restore dependencies
+      run: |
+        cd AgileworksAPI      
+        dotnet restore
     - name: Build
       run: |
         cd AgileworksAPI      
