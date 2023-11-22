@@ -10,6 +10,8 @@ on:
     paths: 
       - AgileworksAPI/**
       - AgileworksAPI.Tests/**
+    paths-ignore:
+      - front-end/** 
 jobs:
   build:
     runs-on: ubuntu-latest

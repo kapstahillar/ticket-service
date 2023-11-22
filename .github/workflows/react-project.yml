@@ -9,6 +9,9 @@ on:
     branches: [ "main", "develop" ]
     paths: 
       - frontend-app/**
+    paths-ignore: 
+      - AgileworksAPI/**
+      - AgileworksAPI.Tests/**
 
 jobs:
   build_test:
