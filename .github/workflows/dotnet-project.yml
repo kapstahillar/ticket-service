@@ -11,6 +11,7 @@ on:
       - '!frontend-app/**'
       - 'AgileworksAPI/**'
       - 'AgileworksAPI.Tests/**'
+      - '!.github/workflows/react-project.yml'
 jobs:
   build:
     runs-on: ubuntu-latest
