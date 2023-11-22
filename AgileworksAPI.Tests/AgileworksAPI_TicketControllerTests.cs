@@ -6,8 +6,8 @@ using AgileworksAPI.Models.Input;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 
-namespace AgileWorksAPI.Tests;
-
+namespace AgileworksAPI.Tests;
+// Ticket test
 public class TicketControllerTests
 {
     [Fact]

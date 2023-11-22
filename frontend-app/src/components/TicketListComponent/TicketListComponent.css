@@ -1,0 +1,19 @@
+.ticket-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.ticket-list-header {
+    display: flex;
+    flex-direction: row;
+}
+
+.ticket-list-header>div {
+    flex: 1
+}
+
+.ticket-list-header>div:last-child {
+    flex: 1
+}
