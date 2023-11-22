@@ -26,11 +26,7 @@ jobs:
       run: |
         cd AgileworksAPI      
         dotnet build --no-restore
-        dotnet new classlib -o AgileworksAPI
-    - name: Add Test project reference to main project
-      run : |
-        cd AgileworksAPI.Tests
-        dotnet add AgileworksAPI.Tests.csproj reference ../AgileworksAPI/AgileworksAPI.csproj   
+        dotnet new classlib -o AgileworksAPI    
     - name: Test
       run: |
         cd "AgileworksAPI.Tests"
