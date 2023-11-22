@@ -5,7 +5,11 @@ name: .React
 
 on:
   pull_request:
-    branches: [ "main", "develop" ]
+    types: 
+      - opened
+    branches:
+      - main
+      - develop
     paths: 
       - 'frontend-app/**'
       - '!AgileworksAPI/**'
