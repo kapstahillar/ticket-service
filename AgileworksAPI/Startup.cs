@@ -18,6 +18,19 @@ public class Startup
 
     public void ConfigureServices(IServiceCollection services)
     {
+        // CORS
+        services.AddCors(options =>
+        {
+            options.AddPolicy(name: "AppOrigins",
+            builder =>
+                {
+                    builder
+                    .AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+                });
+        });
+
         // DBContexts
         services.AddDbContext<MainDatabaseContext>();
 
@@ -33,7 +46,6 @@ public class Startup
             options.Filters.Add<NotFoundExceptionFilterAttribute>();
         });
 
-
         // Swagger
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
@@ -43,6 +55,7 @@ public class Startup
     {
         if (env.IsDevelopment())
         {
+            app.UseCors("AppOrigins");
             app.UseSwagger();
             app.UseSwaggerUI();
         }

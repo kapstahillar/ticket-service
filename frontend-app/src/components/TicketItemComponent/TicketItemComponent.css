@@ -1,0 +1,13 @@
+.ticket-list-item {
+    width: 100%;
+    display: flex;
+}
+
+.ticket-list-item>div,
+.ticket-list-item>button {
+    flex: 1
+}
+
+.ticket-list-item.near-deadline {
+    background-color: red;
+}
