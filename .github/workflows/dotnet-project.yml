@@ -8,7 +8,7 @@ on:
     branches: [ "main", "develop" ]
     paths: 
       - AgileworksAPI/**
-      - AgileWorksAPI.Tests/**
+      - AgileworksAPI.Tests/**
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -29,9 +29,9 @@ jobs:
         dotnet new classlib -o AgileworksAPI
     - name: Add Test project reference to main project
       run : |
-        cd AgileWorksAPI.Tests
-        dotnet add AgileWorksAPI.Tests.csproj reference ../AgileworksAPI/AgileworksAPI.csproj   
+        cd AgileworksAPI.Tests
+        dotnet add AgileworksAPI.Tests.csproj reference ../AgileworksAPI/AgileworksAPI.csproj   
     - name: Test
       run: |
-        cd "AgileWorksAPI.Tests"
+        cd "AgileworksAPI.Tests"
         dotnet test --verbosity normal
