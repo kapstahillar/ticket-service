@@ -25,6 +25,7 @@ jobs:
     - name: Restore dependencies
       run: |
         cd AgileworksAPI      
+        dotnet nuget locals all --clear
         dotnet restore
     - name: Build
       run: |
